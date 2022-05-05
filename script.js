@@ -1,57 +1,75 @@
-const input = document.querySelector('#fuseau');
-const suggestions = document.querySelector('.suggestions ul');
 
-const fuseau = [ ''];
+let names = [
 
-function search(str) {
-	let results = [];
-	const val = str.toLowerCase();
+"Paris",
+"Istanbul", 	
+"Moscou",
+"Bakou", 
+"Calcutta",	
+"Bangkok", 	
+"Singapour", 
+"Melbourne", 
+"Sydney", 	
+"Fiji", 	
+"Hawaï", 
+"Alaska", 
+"San Francisco", 
+"Tijuana", 	
+"Chicago", 
+"Mexico", 	
+"New York",	
+"Bogota", 
+"Brasilia", 	
+"Îles du Cap Vert",
 
-	for (i = 0; i < fuseau.length; i++) {
-		if (fuseau[i].toLowerCase().indexOf(val) > -1) {
-			results.push(fuseau[i]);
-		}
-	}
 
-	return results;
-}
 
-function searchHandler(e) {
-	const inputVal = e.currentTarget.value;
-	let results = [];
-	if (inputVal.length > 0) {
-		results = search(inputVal);
-	}
-	showSuggestions(results, inputVal);
-}
+  ];
 
-function showSuggestions(results, inputVal) {
+  let sortedNames = names.sort();
+  
+
+  let input = document.getElementById("input");
+
+  input.addEventListener("keyup", (e) => {
+
+    removeElements();
+    for (let i of sortedNames) {
+   
+  
+      if (
+        i.toLowerCase().startsWith(input.value.toLowerCase()) &&
+        input.value != ""
+      ) {
+
+        let listItem = document.createElement("li");
     
-    suggestions.innerHTML = '';
+        listItem.classList.add("list-items");
+        listItem.style.cursor = "pointer";
+        listItem.setAttribute("onclick", "displayNames('" + i + "')");
+  
+        let word = "<b>" + i.substr(0, input.value.length) + "</b>";
+        word += i.substr(input.value.length);
+      
+        listItem.innerHTML = word;
+        document.querySelector(".list").appendChild(listItem);
+      }
+    }
+  });
+  function displayNames(value) {
+    input.value = value;
+    removeElements();
+  }
+  function removeElements() {
 
-	if (results.length > 0) {
-		for (i = 0; i < results.length; i++) {
-			let item = results[i];
-			// Highlights only the first match
-			// TODO: highlight all matches
-			const match = item.match(new RegExp(inputVal, 'i'));
-			item = item.replace(match[0], `<strong>${match[0]}</strong>`);
-			suggestions.innerHTML += `<li>${item}</li>`;
-		}
-		suggestions.classList.add('has-suggestions');
-	} else {
-		results = [];
-		suggestions.innerHTML = '';
-		suggestions.classList.remove('has-suggestions');
-	}
-}
+    let items = document.querySelectorAll(".list-items");
+    items.forEach((item) => {
+      item.remove();
+    });
+  }
 
-function useSuggestion(e) {
-	input.value = e.target.innerText;
-	input.focus();
-	suggestions.innerHTML = '';
-	suggestions.classList.remove('has-suggestions');
-}
 
-input.addEventListener('keyup', searchHandler);
-suggestions.addEventListener('click', useSuggestion);
+
+
+
+

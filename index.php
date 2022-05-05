@@ -12,17 +12,29 @@
 </head>
 <body>
 
-<h1> TIMES ZONE </h1>
+            <h1> TIMES ZONE </h1>
 
-    <div class="box">
+                <div class="box">
+                        
+                    <form name="search">
+                    
+                        <input type="text" class="input" name="txt" id="input" placeholder="Entrer votre capitale (UTF) ..."/>
 
-        <form name="search">
-            <input type="text" class="input" name="txt" placeholder="Entrer votre capitale (UTF) ...">
-        </form>
+                    </form>
 
-            <i class="fas fa-search"></i>
-    </div>
+                    <i class="fas fa-search"></i>
 
-    
-</body>
-</html>
+                    </div>
+
+                    <ul class="list"></ul>
+
+                <script src="script.js"></script>
+
+           
+
+
+            </body>
+            </html>
+
+
+
