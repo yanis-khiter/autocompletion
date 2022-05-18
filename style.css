@@ -1,69 +1,13 @@
-body {
-    background-image: url("mapp.jpg");
-    max-width: 100%;
-    height: auto;
-    background-size: cover;
+#sectionDown,
+#sectionUp {
+    background: rgb(255, 0, 0);
 }
 
-
-h1 {
-    margin-left : 36%;
-    margin-top:3%;
-    font-size:80px;
-    text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0), 1px 1px 10px #141414;
-color:  #1e961e;
-}
-
-.box{
+.content {
+    flex-direction: column;
     position: absolute;
-    top: 20%;
-    left: 40%;
+    width: 20%;
+    display: flex;
+    right: 0;
+    text-align: end;
 }
-
-.input {
-    
-    padding: 10px;
-    width: 380px;
-    height: 60px;
-    border: 5px solid #1e961e;
-    border-radius: 50px;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    color: #ffffff;
-    outline: none;
-    background-color: rgba(0, 0, 0, 0.521);
-}
-
-i{
-    position: absolute;
-    top: 25%;
-    right: 15px;
-    font-size: 30px;
-    color: #ffffff;
-}
-
-
-ul {
-    list-style: none;
-  }
-
-
-  .list {
-font-size:30px;
-    color: rgb(0, 0, 0);
-margin-left:38%;
-margin-top: 5%;
-background-color: white;
- 
-  }
-  .list-items {
-    padding: 10px 5px;
-  }
-
-
-
-
-
-
-

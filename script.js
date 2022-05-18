@@ -1,75 +1,70 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    let input = document.querySelector('input');
+    let sectionUp = document.querySelector('#sectionUp');
+    let sectionDown = document.querySelector('#sectionDown');
 
-let names = [
+    console.log(sectionUp);
 
-"Paris",
-"Istanbul", 	
-"Moscou",
-"Bakou", 
-"Calcutta",	
-"Bangkok", 	
-"Singapour", 
-"Melbourne", 
-"Sydney", 	
-"Fiji", 	
-"Hawaï", 
-"Alaska", 
-"San Francisco", 
-"Tijuana", 	
-"Chicago", 
-"Mexico", 	
-"New York",	
-"Bogota", 
-"Brasilia", 	
-"Îles du Cap Vert",
+    input.addEventListener('input', function() {
+
+        if (input.value.length == 0) {
+
+            var items = document.querySelectorAll('#sectionDown a')
+            var items2 = document.querySelectorAll('#sectionUp a')
+
+            items.forEach(element => element.remove())
+            items2.forEach(element => element.remove())
 
 
+        } else { 
 
-  ];
+            var data = new FormData();
 
-  let sortedNames = names.sort();
-  
+            data.append('input', input.value)
 
-  let input = document.getElementById("input");
+            fetch('traitement_recherche.php?search=' + input.value, {
+                method: 'GET',
+                body: null
 
-  input.addEventListener("keyup", (e) => {
+            }).then(response => {
+                return response.json();
 
-    removeElements();
-    for (let i of sortedNames) {
-   
-  
-      if (
-        i.toLowerCase().startsWith(input.value.toLowerCase()) &&
-        input.value != ""
-      ) {
+            }).then(response => {
 
-        let listItem = document.createElement("li");
-    
-        listItem.classList.add("list-items");
-        listItem.style.cursor = "pointer";
-        listItem.setAttribute("onclick", "displayNames('" + i + "')");
-  
-        let word = "<b>" + i.substr(0, input.value.length) + "</b>";
-        word += i.substr(input.value.length);
-      
-        listItem.innerHTML = word;
-        document.querySelector(".list").appendChild(listItem);
-      }
-    }
-  });
-  function displayNames(value) {
-    input.value = value;
-    removeElements();
-  }
-  function removeElements() {
+                var items = document.querySelectorAll('#sectionDown a');
+                var items2 = document.querySelectorAll('#sectionUp a');
 
-    let items = document.querySelectorAll(".list-items");
-    items.forEach((item) => {
-      item.remove();
-    });
-  }
+                var p = document.querySelectorAll('#sectionDown p')
+                var p2 = document.querySelectorAll('#sectionUp p')
 
 
 
+                items.forEach(element => element.remove())
+                p.forEach(element => element.remove())
+
+                items2.forEach(element => element.remove())
+                p2.forEach(element => element.remove())
 
 
+                for (let i = 0; i < response['start'].length; i++) {
+                    let a = document.createElement('a')
+                    a.innerText = response['start'][i]['nom']
+                    a.href = 'recherche.php?search=' + response['start'][i]['nom']
+                    a.classList.add('dropdown-item')
+                    sectionUp.appendChild(a)
+                }
 
+                for (let j = 0; j < response['contain'].length; j++) {
+                    let a = document.createElement('a')
+                    a.innerText = response['contain'][j]['nom']
+                    a.href = 'recherche.php?search=' + response['contain'][j]['nom']
+                    a.classList.add('dropdown-item')
+                    sectionDown.appendChild(a)
+                }
+
+            })
+
+        }
+
+    })
+})

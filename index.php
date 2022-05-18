@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="style.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="index.css">
     <title>Autocompletion</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fontawesome-free-5.15.1/css/all.css">
-    <script src="https://kit.fontawesome.com/afd6aa68df.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
-
-            <h1> TIMES ZONE </h1>
-
-                <div class="box">
-                        
-                    <form name="search">
-                    
-                        <input type="text" class="input" name="txt" id="input" placeholder="Entrer votre capitale (UTF) ..."/>
-
-                    </form>
-
-                    <i class="fas fa-search"></i>
-
-                    </div>
-
-                    <ul class="list"></ul>
-
-                <script src="script.js"></script>
-
+    <form autocomplete="off" action="recherche.php" method="GET">
+        <div class="close-btn">
+            <span class="fas fa-times"></span>
+        </div>
+        <div class="wrapper">
+            <div class="search-btn">
+                <span class="fas fa-search"></span>
+            </div>
+            <div class="search-data">
+                <input type="text" name="search" id="fuseau" placeholder="Recherchez votre capitale">
+                <div class="line"></div>
+                <span class="fas fa-search"></span>
+                <div id="sectionUp"></div>
+                <div class="line2"></div>
+                <div id="sectionDown"></div>
+            </div>
            
-
-
-            </body>
-            </html>
-
-
-
+    </form>
+</body>
+</html>
