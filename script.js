@@ -52,15 +52,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     a.href = 'recherche.php?search=' + response['start'][i]['nom']
                     a.classList.add('dropdown-item')
                     sectionUp.appendChild(a)
+                  
                 }
+                
+
 
                 for (let j = 0; j < response['contain'].length; j++) {
-                    let a = document.createElement('a')
-                    a.innerText = response['contain'][j]['nom']
-                    a.href = 'recherche.php?search=' + response['contain'][j]['nom']
-                    a.classList.add('dropdown-item')
-                    sectionDown.appendChild(a)
+                
+                        let a = document.createElement('a')
+                        a.innerText = response['contain'][j]['nom']
+                        a.href = 'recherche.php?search=' + response['contain'][j]['nom']
+                        a.classList.add('dropdown-item')
+                        sectionDown.appendChild(a)
+                    
                 }
+
+                
 
             })
 

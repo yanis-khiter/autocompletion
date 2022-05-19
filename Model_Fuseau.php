@@ -23,7 +23,7 @@ class Fuseau{
             $query->execute();
             $fuseaustart=$query->fetchall();
         
-            if(!empty($fuseaustart)){
+            if(!empty($fuseaustart[0])){
                 $tab = array(
                     'start' => $fuseaustart,
                     'contain'=> []
@@ -31,26 +31,28 @@ class Fuseau{
             }
         
         
-            $query = $this->pdo->prepare("SELECT * FROM `fuseau_monde` WHERE nom LIKE CONCAT ('%','$fuseau','%')");
+            $query = $this->pdo->prepare("SELECT * FROM `fuseau_monde` WHERE nom LIKE CONCAT ('%','$fuseau','%') AND nom NOT LIKE CONCAT ('$fuseau', '%')");
             $query->setFetchMode(\PDO::FETCH_ASSOC);
             $query->execute();
             $contain=$query->fetchall();
           
-            if(!empty($contain)){
+            if(!empty($contain[0])){
                 $tab = array(
                     'start' => $fuseaustart,
                     'contain'=> $contain
                 );
             }
-            for($i = 0; $i < $tab['contain'][$i];$i++){
-                foreach($tab['start'] as $element){
-                    if($element['nom'] == $tab['contain'][$i]['nom']){
-                        array_splice($tab['contain'],$i,1);
-                    }
-                }
-            }
-        
-        return $tab;
+            // var_dump($tab['contain']);
+            // for($i = 0; $i < $tab['contain'][$i];$i++){
+            //     foreach($tab['start'] as $element){
+            //         if($element['nom'] == $tab['contain'][$i]['nom']){
+            //             array_splice($tab['contain'],$i,1);
+            //         }
+            //     }
+            // }
+            
+        return $tab; 
+
     }
 
     public function resultelement($id){

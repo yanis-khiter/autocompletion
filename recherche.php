@@ -50,13 +50,17 @@ require_once('controller_recherche.php');
                     </tr>
                 <?php };
                 ?>
-                <?php foreach ($tab['contain'] as $st) {  ?>
+                <?php
+                foreach ($tab['contain'] as $st) {  ?>
                     <tr>
                         <td><a href="element.php?id=<?php echo $st['id'] ?> "><img src="<?= $st['image']; ?>" width="200px" height="150px"></a></td>
                         <td><?= $st['nom']; ?></td>
-                        <td><?= $st['moteur']; ?></td>
+                        <td><?= $st['description']; ?></td>
                     </tr>
-                <?php }; ?>
+                <?php };
+                ?>
+
+                 
             </tbody>
         </table>
     </main>

@@ -5,6 +5,6 @@ $fuseau = htmlspecialchars($_GET['search']);
 
 $root = new Fuseau();
 
-@$tab = $root->searchstart($fuseau);
+$tab = $root->searchstart($fuseau);
 
 echo json_encode($tab);
