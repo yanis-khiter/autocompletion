@@ -9,11 +9,15 @@ body {
     position: relative;
     font-family: 'Poppins', sans-serif;
     background-color: rgba(139, 41, 41, 0.012);
+    background-image: url(../img/world.jpg);
+max-width: 100%;
+height: auto;
+background-size: cover;
 }
 
 .wrapper,
 .search-data {
-    top: 46%;
+    top: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -23,32 +27,30 @@ body {
     height: 0px;
     width: 0px;
     border-radius: 100%;
-    background: linear-gradient(-135deg, #1dd871, red);
-    transition: all 0.4s linear;
+    background: linear-gradient(-135deg, #b82d06, rgb(255, 0, 251),);
+    transition: all 0.8s linear;
 }
 
-.wrapper.active {
-    height: 4000px;
-    width: 4000px;
-}
 
 .search-btn {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     text-align: center;
     cursor: pointer;
     border-radius: 50%;
-    background: linear-gradient(-135deg, #50c0c8, red);
+    background: linear-gradient(-135deg, #3e4040, rgb(0, 0, 0));
 }
 
 .search-btn span {
     color: #fff;
-    font-size: 22px;
-    line-height: 60px;
+    font-size: 40px;
+    line-height: 80px;
+}
+
+.search-btn:hover {
+    transform: scale(1.2, 1.2);
+    transition: 0.5s;
 }
 
 .search-data {
