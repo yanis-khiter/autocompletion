@@ -12,40 +12,36 @@ require_once('controller_recherche.php');
     <script type="text/javascript" src="./js/script.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/barre2.css">
+    <link rel="stylesheet" href="./css/recherche.css">
     <title>Recherche</title>
 </head>
 
 <body>
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" autocomplete="off" action="recherche.php" method="GET">
-                        <input class="form-control me-2" type="text" name="search" id="fuseau" placeholder="Rechercher votre capitale">
-                    </form>
-                </div>
-            </div>
-        </nav>
+            
+            <a class="nav-link active" aria-current="page" href="index.php"><img class="logo" src="./img/logo.png" alt="Logo Cities"></a>
+            <form  autocomplete="off" action="recherche.php" method="GET">
+                <input type="text" name="search" id="fuseau" placeholder="Rechercher votre capitale">
+            </form>
+
     </header>
+
     <main>
-    <div class="content">
-        <div id="sectionUp">
+
+        <div class="content">
+            <div id="sectionUp">
+            </div>
+            <div id="sectionDown">
+            </div>
         </div>
-        <div id="sectionDown">
-        </div>
-    </div>
         <table class="table table-borderless">
             <tbody>
                 <?php
                 foreach ($tab['start'] as $st) {  ?>
                     <tr>
                         <td><a href="element.php?id=<?php echo $st['id'] ?> "><img src="<?= $st['image']; ?>" width="200px" height="150px"></a></td>
-                        <td><?= $st['nom']; ?></td>
+                        <td class="nom"><?= $st['nom']; ?></td>
                         <td><?= $st['description']; ?></td>
                     </tr>
                 <?php };
@@ -60,7 +56,7 @@ require_once('controller_recherche.php');
                 <?php };
                 ?>
 
-                 
+
             </tbody>
         </table>
     </main>

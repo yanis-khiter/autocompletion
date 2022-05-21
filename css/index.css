@@ -1,160 +1,208 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 body {
-    position: relative;
-    font-family: 'Poppins', sans-serif;
-    background-color: rgba(139, 41, 41, 0.012);
-    background-image: url(../img/world.jpg);
+position: relative;
+font-family: 'Poppins', sans-serif;
+background-color: rgba(139, 41, 41, 0.012);
+background-image: url(../img/world.jpg);
 max-width: 100%;
 height: auto;
 background-size: cover;
 }
 
+header {
+background-color: #000000b4;
+height: 100px;
+display: flex;
+justify-content:space-around;
+}
+
+.logo {
+width: 10em;
+height: 70%;
+margin-top: 1.5%;
+transform: scale(1, 2);
+}
+
+h1 {
+text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255), 1px 1px 10px #141414;
+color: #ffa126;
+font-size: 60px;
+text-align: center;
+font-family:'Times New Roman', Times, serif;
+margin-top:1%;
+}
+
+li {
+    margin-top:2%;
+    text-decoration: none;
+    list-style-type: none;
+  
+}
+
+.todo {
+text-decoration:none;
+font-size: 25px;
+margin-top: 4%;
+color: rgb(255, 255, 255);
+}
+
+.todo:hover {
+color: #cd8232;
+text-decoration: none;
+}
+
+
 .wrapper,
 .search-data {
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+top: 23%;
+left: 45%;
+transform: translate(-50%, -50%);
+
 }
 
 .wrapper {
-    position: fixed;
-    height: 0px;
-    width: 0px;
-    border-radius: 100%;
-    background: linear-gradient(-135deg, #b82d06, rgb(255, 0, 251),);
-    transition: all 0.8s linear;
+position: fixed;
+height: 0px;
+width: 0px;
+border-radius: 100%;
+background: linear-gradient(-135deg, #b82d06, rgb(255, 0, 251),);
+transition: all 0.8s linear;
 }
 
 
 .search-btn {
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 50%;
-    background: linear-gradient(-135deg, #3e4040, rgb(0, 0, 0));
+position: absolute;
+height: 75px;
+width: 75px;
+text-align: center;
+cursor: pointer;
+border-radius: 50%;
+background: linear-gradient(-135deg, #ff5100, rgb(208, 181, 3));
 }
 
 .search-btn span {
-    color: #fff;
-    font-size: 40px;
-    line-height: 80px;
+color: rgb(255, 255, 255);
+font-size: 40px;
+line-height: 80px;
 }
 
 .search-btn:hover {
-    transform: scale(1.2, 1.2);
-    transition: 0.5s;
+transform: scale(1.2, 1.2);
+transition: 0.5s;
+}
+
+.search-btn { 
+transition: 0.8s;
 }
 
 .search-data {
-    position: absolute;
-    height: 50px;
-    width: 400px;
-    display: flex;
-    text-align: center;
-    /* display: none; */
+position: absolute;
+height: 50px;
+width: 400px;
+display: flex;
+text-align: center;
+/* display: none; */
 }
 
 .search-data input {
-    height: 100%;
-    width: 100%;
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 22px;
-    font-weight: 500;
-    color: #fff;
+height: 100%;
+width: 100%;
+background: none;
+border: none;
+outline: none;
+font-size: 22px;
+font-weight: 500;
+color: #fff;
 }
 
 .search-data .line {
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: #fff;
-    bottom: 0;
-    transform: scaleX(0);
-    transition: transform 0.4s 0.3s linear;
+position: absolute;
+height: 3px;
+width: 100%;
+background: #fff;
+bottom: 0;
+transform: scaleX(0);
+transition: transform 0.4s 0.3s linear;
 }
 
 .search-data .line.active {
-    transform: scaleX(1);
+transform: scaleX(1);
 }
 
 .search-data label {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    font-size: 20px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: rgba(255, 255, 255, 0.7);
+position: absolute;
+top: 50%;
+left: 0;
+font-size: 20px;
+transform: translateY(-50%);
+pointer-events: none;
+color: rgba(255, 255, 255, 0.7);
 }
 
 .search-data input:valid~label {
-    opacity: 0;
+opacity: 0;
 }
 
 .search-data span {
-    color: #fff;
-    position: absolute;
-    width: 50px;
-    font-size: 25px;
-    right: 0;
-    top: 0;
-    line-height: 45px;
-    cursor: pointer;
+color: #fff;
+position: absolute;
+width: 50px;
+font-size: 25px;
+right: 0;
+top: 0;
+line-height: 45px;
+cursor: pointer;
 }
 
 .close-btn {
-    position: absolute;
-    z-index: 99;
-    right: 25px;
-    top: 25px;
-    font-size: 25px;
-    color: #fff;
-    cursor: pointer;
+position: absolute;
+z-index: 99;
+right: 25px;
+top: 25px;
+font-size: 25px;
+color: #fff;
+cursor: pointer;
 }
 
 .search-data,
 .search-data span,
 .search-data label,
 .close-btn {
-    display: none;
+display: none;
 }
 
 ::placeholder {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    font-size: 20px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: rgba(255, 255, 255, 0.7);
+position: absolute;
+top: 50%;
+left: 0;
+font-size: 20px;
+transform: translateY(-50%);
+pointer-events: none;
+color: rgba(255, 255, 255, 0.7);
 }
 
 #sectionUp a {
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
+display: block;
+text-decoration: none;
+color: #fff;
+font-size: 20px;
 }
 
 #sectionDown a {
-    text-decoration: none;
-    display: block;
-    color: #fff;
-    font-size: 20px;
+text-decoration: none;
+display: block;
+color: #fff;
+font-size: 20px;
 }
 
 .line2 {
-    line-height: 45px;
-    transform: scaleX(1);
-    border-bottom: 3px solid rgb(255, 255, 255);
+line-height: 45px;
+transform: scaleX(1);
+border-bottom: 3px solid rgb(255, 255, 255);
 }

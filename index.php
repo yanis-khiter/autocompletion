@@ -13,7 +13,18 @@
     <link rel="stylesheet" href="./css/index.css">
     <title>Autocompletion</title>
 </head>
+
 <body>
+
+    <header>
+
+                    <img class="logo" src="./img/logo.png" alt="Logo Cities">
+                    <h1> CAPITALES</h1>
+                    <li><a class="todo" href="recherche.php?search=">Toutes vos capitales</a></li>
+
+    </header>
+
+
     <form autocomplete="off" action="recherche.php" method="GET">
         <div class="close-btn">
             <span class="fas fa-times"></span>
@@ -30,7 +41,8 @@
                 <div class="line2"></div>
                 <div id="sectionDown"></div>
             </div>
-           
+
     </form>
 </body>
+
 </html>
