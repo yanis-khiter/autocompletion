@@ -40,18 +40,18 @@ require_once('controller_recherche.php');
                 <?php
                 foreach ($tab['start'] as $st) {  ?>
                     <tr>
-                        <td><a href="element.php?id=<?php echo $st['id'] ?> "><img src="<?= $st['image']; ?>" width="200px" height="150px"></a></td>
+                        <td class="image"><a href="element.php?id=<?php echo $st['id'] ?> "><img class="image" src="<?= $st['image']; ?>" width="200px" height="150px"></a></td>
                         <td class="nom"><?= $st['nom']; ?></td>
-                        <td><?= $st['description']; ?></td>
+                        <td class="texte"><?= $st['description']; ?></td>
                     </tr>
                 <?php };
                 ?>
                 <?php
                 foreach ($tab['contain'] as $st) {  ?>
                     <tr>
-                        <td><a href="element.php?id=<?php echo $st['id'] ?> "><img src="<?= $st['image']; ?>" width="200px" height="150px"></a></td>
-                        <td><?= $st['nom']; ?></td>
-                        <td><?= $st['description']; ?></td>
+                        <td class="image"><a href="element.php?id=<?php echo $st['id'] ?> "><img class="image" src="<?= $st['image']; ?>" width="200px" height="150px"></a></td>
+                        <td class="nom"><?= $st['nom']; ?></td>
+                        <td class="texte"><?= $st['description']; ?></td>
                     </tr>
                 <?php };
                 ?>

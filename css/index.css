@@ -191,14 +191,27 @@ color: rgba(255, 255, 255, 0.7);
 display: block;
 text-decoration: none;
 color: #fff;
-font-size: 20px;
+font-size: 22px;
+font-weight: bold;
 }
+
+
+#sectionUp a:hover {
+    color: #1e2125;
+    background-color: #e9ecef;
+    }
 
 #sectionDown a {
 text-decoration: none;
 display: block;
 color: #fff;
-font-size: 20px;
+font-size: 22px;
+font-weight: bold;
+}
+
+#sectionDown a:hover {
+color: #1e2125;
+background-color: #e9ecef;
 }
 
 .line2 {

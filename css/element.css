@@ -1,18 +1,86 @@
+
+header {
+background-color: #000000;
+height: 100px;
+display: flex;
+justify-content: space-between;
+}
+
+.nom {
+color: rgb(250, 0, 0);
+font-weight: bold;
+font-size:25px
+}
+
+.logo {
+width: 10em;
+height: 90%;
+margin-top: 6%;
+transform: scale(1, 2);
+}
+
+input {
+padding: 0.5em 1.7em;
+margin: 0 0.1em 0.1em 0;
+border: 3px solid white;
+border-color: rgb(255, 200, 0);
+border-radius: 2em;
+box-sizing: border-box;
+text-decoration: none;
+font-family: "Roboto", sans-serif;
+color: #000000;
+font-size: 20px;
+width: 300px;
+margin-top: 8%;
+}
+
+.haut {
+text-align: center;
+margin-bottom: 2%;
+
+}
+
+.nomh1 {
+text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255), 1px 1px 10px #141414;
+color: #000000;
+font-size: 60px;
+text-align: center;
+margin-top: 1%;
+
+}
+
+
+.time {
+color: red;
+font-weight: bold;
+font-style: italic;
+font-size: 20px;
+
+}
+
+
+.box {
+
+}
+
+.descri {
+font-size: 20px; 
+text-align: center;
+margin: 0 5%;
+
+
+}
+
 .image {
-    display: flex;
-    justify-content: center;
+width: 500px;
+margin-left : 35%;
+margin-top: 3%;
+
 }
 
-img {
-    height: 100%;
-    width: 100vh;
-}
 
-h1 {
-    text-align: center;
-}
 
-p {
-    text-align: center;
-    font-size: 2em;
-}
+
+
+
+
