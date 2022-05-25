@@ -27,6 +27,7 @@ width: 10em;
 height: 70%;
 margin-top: 1.5%;
 transform: scale(1, 2);
+margin-left:7%
 }
 
 h1 {
@@ -36,12 +37,14 @@ font-size: 60px;
 text-align: center;
 font-family:'Times New Roman', Times, serif;
 margin-top:1%;
+margin-left: 7%;
 }
 
 li {
     margin-top:2%;
     text-decoration: none;
     list-style-type: none;
+    margin-left: 2%;
   
 }
 
@@ -61,7 +64,7 @@ text-decoration: none;
 .wrapper,
 .search-data {
 top: 23%;
-left: 45%;
+left: 50%;
 transform: translate(-50%, -50%);
 
 }

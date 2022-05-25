@@ -18,9 +18,9 @@
 
     <header>
 
-                    <img class="logo" src="./img/logo.png" alt="Logo Cities">
-                    <h1> CAPITALES</h1>
-                    <li><a class="todo" href="recherche.php?search=">Toutes vos capitales</a></li>
+                    <img class="logo" src="./img/lologo.png" alt="Logo Cities">
+                    <h1> VOYAGES</h1>
+                    <li><a class="todo" href="recherche.php?search=">Toutes vos destinations</a></li>
 
     </header>
 
@@ -34,7 +34,7 @@
                 <span class="fas fa-search"></span>
             </div>
             <div class="search-data">
-                <input type="text" name="search" id="fuseau" placeholder="Recherchez votre capitale">
+                <input type="text" name="search" id="fuseau" placeholder="Recherchez vos destinations">
                 <div class="line"></div>
                 <span class="fas fa-search"></span>
                 <div id="sectionUp"></div>

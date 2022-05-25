@@ -18,9 +18,9 @@ require_once('controller_element.php');
 
     <header>
 
-            <a class="nav-link active" aria-current="page" href="index.php"><img class="logo" src="./img/logo.png" alt="Logo Cities"></a>
+            <a class="nav-link active" aria-current="page" href="index.php"><img class="logo" src="./img/lologo.png" alt="Logo Cities"></a>
             <form  autocomplete="off" action="recherche.php" method="GET">
-                <input type="text" name="search" id="fuseau" placeholder="Rechercher votre capitale">
+                <input type="text" name="search" id="fuseau" placeholder="Recherchez vos destinations">
             </form>
 
     </header>
@@ -41,7 +41,7 @@ require_once('controller_element.php');
                 <h1 class="nomh1"><?php echo $tab[0]['nom']?> <img class="drapeau"src= <?php echo $tab[0]['drapeau'] ?> alt=""></h1> 
 
                 <div class="time">
-                    <?php date_default_timezone_set ($tab[0]['time']) ; $pa = date('H:i:s'); echo 'Heure actuelle : '.$pa; ?> <?php echo $tab[0]['time'] ?> 
+                    <?php date_default_timezone_set ($tab[0]['time']) ; $pa = date('H:i:s'); echo 'Heure actuelle : '.$pa; ?> 
                 </div>
 
             </div>
